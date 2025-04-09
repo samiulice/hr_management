@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const endDate = new Date(request.endDate);
             const formattedStartDate = startDate.toLocaleDateString('en-US', {
                 year: 'numeric',
-                month: 'short',  {
+                month: 'short',
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric'
