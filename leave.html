@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leave Management - HR Management System</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
-
 <body>
     <div class="container">
         <!-- Sidebar -->
@@ -152,7 +149,7 @@
                         <button class="tab-btn" data-tab="leave-calendar">Leave Calendar</button>
                         <button class="tab-btn" data-tab="leave-policy">Leave Policy</button>
                     </div>
-
+                    
                     <!-- All Requests Tab -->
                     <div class="tab-content active" id="all-requests-tab">
                         <div class="filters-actions">
@@ -222,8 +219,7 @@
                         <!-- Pagination -->
                         <div class="pagination">
                             <div class="pagination-info">
-                                Showing <span id="showing-start">1</span> to <span id="showing-end">10</span> of <span
-                                    id="total-items">45</span> entries
+                                Showing <span id="showing-start">1</span> to <span id="showing-end">10</span> of <span id="total-items">45</span> entries
                             </div>
                             <div class="pagination-controls">
                                 <button class="pagination-btn" disabled>
@@ -370,9 +366,7 @@
                                     <p><strong>Accrual:</strong> 1.67 days per month</p>
                                     <p><strong>Carry Forward:</strong> Maximum 5 days</p>
                                     <p><strong>Notice Period:</strong> 2 weeks in advance</p>
-                                    <p><strong>Description:</strong> Annual leave is provided to employees for rest and
-                                        recreation. Employees are encouraged to take their annual leave within the
-                                        calendar year.</p>
+                                    <p><strong>Description:</strong> Annual leave is provided to employees for rest and recreation. Employees are encouraged to take their annual leave within the calendar year.</p>
                                 </div>
                             </div>
                             <div class="policy-card">
@@ -381,11 +375,8 @@
                                     <p><strong>Entitlement:</strong> 10 days per year</p>
                                     <p><strong>Accrual:</strong> 0.83 days per month</p>
                                     <p><strong>Carry Forward:</strong> Not allowed</p>
-                                    <p><strong>Documentation:</strong> Medical certificate required for more than 2
-                                        consecutive days</p>
-                                    <p><strong>Description:</strong> Sick leave is provided to employees who are unable
-                                        to work due to illness or injury. Employees must notify their manager as soon as
-                                        possible.</p>
+                                    <p><strong>Documentation:</strong> Medical certificate required for more than 2 consecutive days</p>
+                                    <p><strong>Description:</strong> Sick leave is provided to employees who are unable to work due to illness or injury. Employees must notify their manager as soon as possible.</p>
                                 </div>
                             </div>
                             <div class="policy-card">
@@ -395,8 +386,7 @@
                                     <p><strong>Accrual:</strong> 0.42 days per month</p>
                                     <p><strong>Carry Forward:</strong> Not allowed</p>
                                     <p><strong>Notice Period:</strong> As soon as practicable</p>
-                                    <p><strong>Description:</strong> Personal leave is provided to employees for
-                                        personal matters that require their attention during working hours.</p>
+                                    <p><strong>Description:</strong> Personal leave is provided to employees for personal matters that require their attention during working hours.</p>
                                 </div>
                             </div>
                             <div class="policy-card">
@@ -406,79 +396,76 @@
                                     <p><strong>Eligibility:</strong> After 1 year of service</p>
                                     <p><strong>Pay:</strong> Full pay for 60 days, half pay for 30 days</p>
                                     <p><strong>Notice Period:</strong> 3 months in advance</p>
-                                    <p><strong>Description:</strong> Maternity leave is provided to female employees for
-                                        childbirth and childcare. Employees must provide a medical certificate.</p>
+                                    <p><strong>Description:</strong> Maternity leave is provided to female employees for childbirth and childcare. Employees must provide a medical certificate.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Apply for Leave Modal -->
-            <div class="modal" id="apply-leave-modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Apply for Leave</h2>
-                        <button class="close-btn">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="apply-leave-form">
-                            <div class="form-row">
-                                <div class="form-group full-width">
-                                    <label for="leave-type">Leave Type</label>
-                                    <select id="leave-type" name="leave-type" required>
-                                        <option value="">Select Leave Type</option>
-                                        <option value="annual">Annual Leave</option>
-                                        <option value="sick">Sick Leave</option>
-                                        <option value="personal">Personal Leave</option>
-                                        <option value="maternity">Maternity Leave</option>
-                                        <option value="paternity">Paternity Leave</option>
-                                        <option value="unpaid">Unpaid Leave</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="start-date">Start Date</label>
-                                    <input type="date" id="start-date" name="start-date" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="end-date">End Date</label>
-                                    <input type="date" id="end-date" name="end-date" required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group full-width">
-                                    <label for="days">Number of Days</label>
-                                    <input type="number" id="days" name="days" readonly>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group full-width">
-                                    <label for="reason">Reason</label>
-                                    <textarea id="reason" name="reason" rows="3" required></textarea>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group full-width">
-                                    <label for="contact">Contact During Leave</label>
-                                    <input type="tel" id="contact" name="contact">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="secondary-btn" id="cancel-btn">Cancel</button>
-                        <button class="primary-btn" id="submit-leave-btn">Submit Request</button>
-                    </div>
-                </div>
-            </div>
         </main>
     </div>
 
-
+    <!-- Apply for Leave Modal -->
+    <div class="modal" id="apply-leave-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Apply for Leave</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="apply-leave-form">
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="leave-type">Leave Type</label>
+                            <select id="leave-type" name="leave-type" required>
+                                <option value="">Select Leave Type</option>
+                                <option value="annual">Annual Leave</option>
+                                <option value="sick">Sick Leave</option>
+                                <option value="personal">Personal Leave</option>
+                                <option value="maternity">Maternity Leave</option>
+                                <option value="paternity">Paternity Leave</option>
+                                <option value="unpaid">Unpaid Leave</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="start-date">Start Date</label>
+                            <input type="date" id="start-date" name="start-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">End Date</label>
+                            <input type="date" id="end-date" name="end-date" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="days">Number of Days</label>
+                            <input type="number" id="days" name="days" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="reason">Reason</label>
+                            <textarea id="reason" name="reason" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="contact">Contact During Leave</label>
+                            <input type="tel" id="contact" name="contact">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="cancel-btn">Cancel</button>
+                <button class="primary-btn" id="submit-leave-btn">Submit Request</button>
+            </div>
+        </div>
+    </div>
 
     <script src="leave.js"></script>
 </body>
-
 </html>
