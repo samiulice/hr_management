@@ -166,6 +166,9 @@ input:focus + .slider {
     box-shadow: 0 0 1px var(--primary-color);
 }
 input:checked + .slider:before {
+    transform: translateX(18px);
+}
+input:checked + .slider.xl:before {
     transform: translateX(26px);
 }
 .slider.round {
@@ -513,10 +516,15 @@ themeSwitcher.addEventListener('change', function() {
         primaryDark = '#bf360c';
     }
     
+    //save color to local storage
+    localStorage.setItem('primaryColor', primaryColor);
+    localStorage.setItem('primaryLight', primaryLight);
+    localStorage.setItem('primaryDark', primaryDark);
+    
     // Apply the theme colors
-    document.documentElement.style.setProperty('--primary-color', primaryColor);
-    document.documentElement.style.setProperty('--primary-light', primaryLight);
-    document.documentElement.style.setProperty('--primary-dark', primaryDark);
+    document.documentElement.style.setProperty('--primary-color', localStorage.getItem('primaryColor'));
+    document.documentElement.style.setProperty('--primary-light', localStorage.getItem('primaryLight'));
+    document.documentElement.style.setProperty('--primary-dark', localStorage.getItem('primaryDark'));
 });
 }
 
@@ -684,37 +692,6 @@ if (savedDarkMode) {
     document.body.classList.add('dark-mode');
 }
 
-// Create dark mode toggle in header if it doesn't exist
-if (!document.querySelector('.dark-mode-toggle')) {
-    const headerRight = document.querySelector('.header-right');
-    if (headerRight) {
-        const darkModeToggle = document.createElement('div');
-        darkModeToggle.className = 'dark-mode-toggle';
-        darkModeToggle.innerHTML = `
-            <span class="material-symbols-outlined">${savedDarkMode ? 'dark_mode' : 'light_mode'}</span>
-            <label class="dark-mode-switch">
-                <input type="checkbox" ${savedDarkMode ? 'checked' : ''}>
-                <span class="dark-mode-slider"></span>
-            </label>
-        `;
-        headerRight.appendChild(darkModeToggle);
-        
-        // Add event listener to the toggle
-        const darkModeCheckbox = darkModeToggle.querySelector('input');
-        darkModeCheckbox.addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('dark-mode');
-                darkModeToggle.querySelector('.material-symbols-outlined').textContent = 'dark_mode';
-                localStorage.setItem('darkMode', 'true');
-            } else {
-                document.body.classList.remove('dark-mode');
-                darkModeToggle.querySelector('.material-symbols-outlined').textContent = 'light_mode';
-                localStorage.setItem('darkMode', 'false');
-            }
-        });
-    }
-}
-
 // Add dark mode section to appearance settings if it exists
 const appearanceTab = document.getElementById('appearance-tab');
 if (appearanceTab && !appearanceTab.querySelector('.dark-mode-section')) {
@@ -738,20 +715,10 @@ if (appearanceTab && !appearanceTab.querySelector('.dark-mode-section')) {
     darkModeSettingsCheckbox.addEventListener('change', function() {
         if (this.checked) {
             document.body.classList.add('dark-mode');
-            document.querySelector('.dark-mode-toggle .material-symbols-outlined').textContent = 'dark_mode';
             localStorage.setItem('darkMode', 'true');
-            
-            // Also update the header toggle if it exists
-            const headerToggle = document.querySelector('.header-right .dark-mode-toggle input');
-            if (headerToggle) headerToggle.checked = true;
         } else {
             document.body.classList.remove('dark-mode');
-            document.querySelector('.dark-mode-toggle .material-symbols-outlined').textContent = 'light_mode';
             localStorage.setItem('darkMode', 'false');
-            
-            // Also update the header toggle if it exists
-            const headerToggle = document.querySelector('.header-right .dark-mode-toggle input');
-            if (headerToggle) headerToggle.checked = false;
         }
     });
 }

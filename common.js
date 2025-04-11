@@ -7,49 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('dark-mode');
     }
 
-    // Create dark mode toggle in header if it doesn't exist
-    if (!document.querySelector('.header-right .dark-mode-toggle')) {
-        const headerRight = document.querySelector('.header-right');
-        if (headerRight) {
-            const darkModeToggle = document.createElement('div');
-            darkModeToggle.className = 'dark-mode-toggle';
-            darkModeToggle.innerHTML = `
-                <span class="material-symbols-outlined">${savedDarkMode ? 'dark_mode' : 'light_mode'}</span>
-                <label class="dark-mode-switch">
-                    <input type="checkbox" id="header-dark-mode-toggle" ${savedDarkMode ? 'checked' : ''}>
-                    <span class="dark-mode-slider"></span>
-                </label>
-            `;
-            headerRight.appendChild(darkModeToggle);
-            
-            // Add event listener to the toggle
-            const darkModeCheckbox = darkModeToggle.querySelector('input');
-            darkModeCheckbox.addEventListener('change', function() {
-                if (this.checked) {
-                    document.body.classList.add('dark-mode');
-                    darkModeToggle.querySelector('.material-symbols-outlined').textContent = 'dark_mode';
-                    localStorage.setItem('darkMode', 'true');
-                    
-                    // Update settings page toggle if we're on the settings page
-                    const settingsToggle = document.getElementById('dark-mode-settings');
-                    if (settingsToggle) {
-                        settingsToggle.checked = true;
-                    }
-                } else {
-                    document.body.classList.remove('dark-mode');
-                    darkModeToggle.querySelector('.material-symbols-outlined').textContent = 'light_mode';
-                    localStorage.setItem('darkMode', 'false');
-                    
-                    // Update settings page toggle if we're on the settings page
-                    const settingsToggle = document.getElementById('dark-mode-settings');
-                    if (settingsToggle) {
-                        settingsToggle.checked = false;
-                    }
-                }
-            });
-        }
-    }
-
     // Add dark mode toggle to mobile sidebar if it exists
     const sidebarToggle = document.querySelector('.sidebar-toggle');
     if (sidebarToggle) {
@@ -58,6 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebar.classList.toggle('active');
         });
     }
+    
+    // Apply the theme colors
+    document.documentElement.style.setProperty('--primary-color', localStorage.getItem('primaryColor'));
+    document.documentElement.style.setProperty('--primary-light', localStorage.getItem('primaryLight'));
+    document.documentElement.style.setProperty('--primary-dark', localStorage.getItem('primaryDark'));
+
 
     // Initialize tooltips
     const tooltips = document.querySelectorAll('[data-tooltip]');
