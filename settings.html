@@ -10,77 +10,43 @@
 <body>
     <div class="container">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <div class="sidebar">
             <div class="logo">
                 <h2>HR System</h2>
             </div>
-            <nav class="nav-menu">
+            <div class="nav-menu">
                 <ul>
-                    <li>
-                        <a href="index.html">
-                            <span class="material-symbols-outlined">dashboard</span>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="employees.html">
-                            <span class="material-symbols-outlined">group</span>
-                            Employees
-                        </a>
-                    </li>
-                    <li>
-                        <a href="attendance.html">
-                            <span class="material-symbols-outlined">fact_check</span>
-                            Attendance
-                        </a>
-                    </li>
-                    <li>
-                        <a href="leave.html">
-                            <span class="material-symbols-outlined">event_busy</span>
-                            Leave Management
-                        </a>
-                    </li>
-                    <li>
-                        <a href="performance.html">
-                            <span class="material-symbols-outlined">insights</span>
-                            Performance
-                        </a>
-                    </li>
-                    <li>
-                        <a href="payroll.html">
-                            <span class="material-symbols-outlined">payments</span>
-                            Payroll
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="settings.html">
-                            <span class="material-symbols-outlined">settings</span>
-                            Settings
-                        </a>
-                    </li>
+                    <li><a href="index.html"><span class="material-symbols-outlined">dashboard</span> Dashboard</a></li>
+                    <li><a href="employees.html"><span class="material-symbols-outlined">group</span> Employees</a></li>
+                    <li><a href="attendance.html"><span class="material-symbols-outlined">fact_check</span> Attendance</a></li>
+                    <li><a href="leave.html"><span class="material-symbols-outlined">event_busy</span> Leave</a></li>
+                    <li><a href="performance.html"><span class="material-symbols-outlined">trending_up</span> Performance</a></li>
+                    <li><a href="payroll.html"><span class="material-symbols-outlined">payments</span> Payroll</a></li>
+                    <li class="active"><a href="settings.html"><span class="material-symbols-outlined">settings</span> Settings</a></li>
                 </ul>
-            </nav>
+            </div>
             <div class="user-profile">
                 <div class="avatar">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Avatar">
                 </div>
                 <div class="user-info">
-                    <h4>Sarah Johnson</h4>
+                    <h4>John Doe</h4>
                     <p>HR Manager</p>
                 </div>
             </div>
-        </aside>
+        </div>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <div class="main-content">
             <!-- Header -->
-            <header class="header">
+            <div class="header">
                 <div class="search-bar">
                     <span class="material-symbols-outlined">search</span>
                     <input type="text" placeholder="Search...">
                 </div>
                 <div class="header-right">
                     <div class="notifications">
+                        
                         <span class="material-symbols-outlined">notifications</span>
                         <span class="badge">3</span>
                     </div>
@@ -89,26 +55,28 @@
                         <span class="badge">5</span>
                     </div>
                 </div>
-            </header>
+            </div>
 
             <!-- Settings Content -->
             <div class="settings-page">
                 <div class="page-header">
                     <h1>Settings</h1>
                 </div>
-
-                <!-- Settings Tabs -->
+                
                 <div class="tabs-container">
                     <div class="tabs">
-                        <button class="tab-btn active" data-tab="company">Company</button>
-                        <button class="tab-btn" data-tab="users">Users & Roles</button>
+                        <button class="tab-btn active" data-tab="general">General</button>
+                        <button class="tab-btn" data-tab="users">Users & Permissions</button>
                         <button class="tab-btn" data-tab="notifications">Notifications</button>
                         <button class="tab-btn" data-tab="integrations">Integrations</button>
+                        <button class="tab-btn" data-tab="api">API</button>
+                        <button class="tab-btn" data-tab="data">Data Management</button>
+                        <button class="tab-btn" data-tab="appearance">Appearance</button>
                         <button class="tab-btn" data-tab="system">System</button>
                     </div>
                     
-                    <!-- Company Tab -->
-                    <div class="tab-content active" id="company-tab">
+                    <!-- General Tab -->
+                    <div id="general-tab" class="tab-content active">
                         <div class="settings-section">
                             <h3>Company Information</h3>
                             <form class="settings-form">
@@ -118,46 +86,75 @@
                                         <input type="text" id="company-name" value="Acme Corporation">
                                     </div>
                                     <div class="form-group">
-                                        <label for="company-email">Email</label>
-                                        <input type="email" id="company-email" value="info@acmecorp.com">
+                                        <label for="company-website">Website</label>
+                                        <input type="url" id="company-website" value="https://acmecorp.com">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="company-phone">Phone</label>
-                                        <input type="tel" id="company-phone" value="+1 (555) 123-4567">
+                                        <label for="company-email">Email</label>
+                                        <input type="email" id="company-email" value="info@acmecorp.com">
                                     </div>
                                     <div class="form-group">
-                                        <label for="company-website">Website</label>
-                                        <input type="url" id="company-website" value="https://www.acmecorp.com">
+                                        <label for="company-phone">Phone</label>
+                                        <input type="tel" id="company-phone" value="+1 (555) 123-4567">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group full-width">
                                         <label for="company-address">Address</label>
-                                        <textarea id="company-address" rows="3">123 Business Avenue, Suite 500, San Francisco, CA 94107, USA</textarea>
+                                        <input type="text" id="company-address" value="123 Business Ave, Suite 100, San Francisco, CA 94107">
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="primary-btn">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="settings-section">
+                            <h3>Localization</h3>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="language-switcher">Language</label>
+                                        <select id="language-switcher">
+                                            <option value="en">English</option>
+                                            <option value="es">Spanish</option>
+                                            <option value="fr">French</option>
+                                            <option value="de">German</option>
+                                            <option value="zh">Chinese</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="timezone-switcher">Timezone</label>
+                                        <select id="timezone-switcher">
+                                            <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                            <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                            <option value="UTC-6">Central Time (UTC-6)</option>
+                                            <option value="UTC-5">Eastern Time (UTC-5)</option>
+                                            <option value="UTC+0">UTC</option>
+                                            <option value="UTC+1">Central European Time (UTC+1)</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="tax-id">Tax ID / EIN</label>
-                                        <input type="text" id="tax-id" value="12-3456789">
+                                        <label for="date-format-switcher">Date Format</label>
+                                        <select id="date-format-switcher">
+                                            <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                            <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                            <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="fiscal-year">Fiscal Year Start</label>
-                                        <select id="fiscal-year">
-                                            <option value="january">January</option>
-                                            <option value="february">February</option>
-                                            <option value="march">March</option>
-                                            <option value="april">April</option>
-                                            <option value="may">May</option>
-                                            <option value="june">June</option>
-                                            <option value="july">July</option>
-                                            <option value="august">August</option>
-                                            <option value="september">September</option>
-                                            <option value="october">October</option>
-                                            <option value="november">November</option>
-                                            <option value="december">December</option>
+                                        <label for="currency-switcher">Currency</label>
+                                        <select id="currency-switcher">
+                                            <option value="USD">US Dollar ($)</option>
+                                            <option value="EUR">Euro (€)</option>
+                                            <option value="GBP">British Pound (£)</option>
+                                            <option value="JPY">Japanese Yen (¥)</option>
+                                            <option value="CNY">Chinese Yuan (¥)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -166,7 +163,7 @@
                                 </div>
                             </form>
                         </div>
-
+                        
                         <div class="settings-section">
                             <h3>Departments</h3>
                             <div class="table-container">
@@ -176,102 +173,63 @@
                                             <th>Department Name</th>
                                             <th>Manager</th>
                                             <th>Employees</th>
-                                            <th>Created Date</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>IT Department</td>
-                                            <td>John Smith</td>
-                                            <td>65</td>
-                                            <td>Jan 15, 2020</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
+                                            <td>Human Resources</td>
+                                            <td>John Doe</td>
+                                            <td>12</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>HR Department</td>
-                                            <td>Sarah Johnson</td>
-                                            <td>25</td>
-                                            <td>Jan 15, 2020</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Marketing Department</td>
-                                            <td>Emily Johnson</td>
+                                            <td>Engineering</td>
+                                            <td>Jane Smith</td>
                                             <td>45</td>
-                                            <td>Mar 10, 2020</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Finance Department</td>
-                                            <td>David Wilson</td>
-                                            <td>35</td>
-                                            <td>Apr 22, 2020</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
+                                            <td>Marketing</td>
+                                            <td>Robert Johnson</td>
+                                            <td>18</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Operations Department</td>
-                                            <td>Robert Anderson</td>
-                                            <td>78</td>
-                                            <td>Jun 15, 2020</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
+                                            <td>Sales</td>
+                                            <td>Emily Davis</td>
+                                            <td>32</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Finance</td>
+                                            <td>Michael Wilson</td>
+                                            <td>15</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="table-actions">
-                                <button class="primary-btn">
-                                    <span class="material-symbols-outlined">add</span>
-                                    Add Department
-                                </button>
+                                <button class="primary-btn"><span class="material-symbols-outlined">add</span> Add Department</button>
                             </div>
                         </div>
-
+                        
                         <div class="settings-section">
                             <h3>Locations</h3>
                             <div class="table-container">
@@ -280,8 +238,6 @@
                                         <tr>
                                             <th>Location Name</th>
                                             <th>Address</th>
-                                            <th>City</th>
-                                            <th>Country</th>
                                             <th>Employees</th>
                                             <th>Actions</th>
                                         </tr>
@@ -289,94 +245,49 @@
                                     <tbody>
                                         <tr>
                                             <td>Headquarters</td>
-                                            <td>123 Business Avenue, Suite 500</td>
-                                            <td>San Francisco</td>
-                                            <td>USA</td>
-                                            <td>156</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
+                                            <td>123 Business Ave, San Francisco, CA</td>
+                                            <td>85</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>East Coast Office</td>
-                                            <td>456 Park Avenue, 12th Floor</td>
-                                            <td>New York</td>
-                                            <td>USA</td>
-                                            <td>52</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
+                                            <td>New York Office</td>
+                                            <td>456 Park Ave, New York, NY</td>
+                                            <td>32</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>European Office</td>
-                                            <td>10 Oxford Street</td>
-                                            <td>London</td>
-                                            <td>UK</td>
-                                            <td>35</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Asia Pacific Office</td>
-                                            <td>88 Connaught Road</td>
-                                            <td>Hong Kong</td>
-                                            <td>China</td>
-                                            <td>25</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn delete-btn" title="Delete">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </div>
+                                            <td>London Office</td>
+                                            <td>789 Oxford St, London, UK</td>
+                                            <td>28</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="table-actions">
-                                <button class="primary-btn">
-                                    <span class="material-symbols-outlined">add</span>
-                                    Add Location
-                                </button>
+                                <button class="primary-btn"><span class="material-symbols-outlined">add</span> Add Location</button>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Users & Roles Tab -->
-                    <div class="tab-content" id="users-tab">
+                    
+                    <!-- Users & Permissions Tab -->
+                    <div id="users-tab" class="tab-content">
                         <div class="settings-section">
                             <h3>Users</h3>
                             <div class="table-container">
                                 <table class="data-table">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
+                                            <th>User</th>
                                             <th>Role</th>
                                             <th>Department</th>
                                             <th>Last Login</th>
@@ -386,108 +297,98 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                <div class="user-info-cell">
-                                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="user-avatar-small">
-                                                    <span>Sarah Johnson</span>
+                                            <td class="user-info-cell">
+                                                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="John Doe" class="user-avatar-small">
+                                                <div>
+                                                    <div>John Doe</div>
+                                                    <div class="employee-email">john.doe@acmecorp.com</div>
                                                 </div>
                                             </td>
-                                            <td>sarah.johnson@acmecorp.com</td>
                                             <td>HR Manager</td>
-                                            <td>HR</td>
-                                            <td>Today, 9:32 AM</td>
+                                            <td>Human Resources</td>
+                                            <td>Today, 9:45 AM</td>
                                             <td><span class="status-badge badge-success">Active</span></td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn" title="Reset Password">
-                                                        <span class="material-symbols-outlined">lock_reset</span>
-                                                    </button>
-                                                </div>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="user-info-cell">
-                                                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="John Smith" class="user-avatar-small">
-                                                    <span>John Smith</span>
+                                            <td class="user-info-cell">
+                                                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Jane Smith" class="user-avatar-small">
+                                                <div>
+                                                    <div>Jane Smith</div>
+                                                    <div class="employee-email">jane.smith@acmecorp.com</div>
                                                 </div>
                                             </td>
-                                            <td>john.smith@acmecorp.com</td>
-                                            <td>IT Manager</td>
-                                            <td>IT</td>
+                                            <td>Engineering Manager</td>
+                                            <td>Engineering</td>
                                             <td>Today, 10:15 AM</td>
                                             <td><span class="status-badge badge-success">Active</span></td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn" title="Reset Password">
-                                                        <span class="material-symbols-outlined">lock_reset</span>
-                                                    </button>
-                                                </div>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="user-info-cell">
-                                                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Emily Johnson" class="user-avatar-small">
-                                                    <span>Emily Johnson</span>
+                                            <td class="user-info-cell">
+                                                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Robert Johnson" class="user-avatar-small">
+                                                <div>
+                                                    <div>Robert Johnson</div>
+                                                    <div class="employee-email">robert.johnson@acmecorp.com</div>
                                                 </div>
                                             </td>
-                                            <td>emily.johnson@acmecorp.com</td>
-                                            <td>Marketing Manager</td>
+                                            <td>Marketing Director</td>
                                             <td>Marketing</td>
-                                            <td>Yesterday, 4:45 PM</td>
+                                            <td>Yesterday, 4:30 PM</td>
                                             <td><span class="status-badge badge-success">Active</span></td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn" title="Reset Password">
-                                                        <span class="material-symbols-outlined">lock_reset</span>
-                                                    </button>
-                                                </div>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="user-info-cell">
-                                                    <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="David Wilson" class="user-avatar-small">
-                                                    <span>David Wilson</span>
+                                            <td class="user-info-cell">
+                                                <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Emily Davis" class="user-avatar-small">
+                                                <div>
+                                                    <div>Emily Davis</div>
+                                                    <div class="employee-email">emily.davis@acmecorp.com</div>
                                                 </div>
                                             </td>
-                                            <td>david.wilson@acmecorp.com</td>
-                                            <td>Finance Manager</td>
-                                            <td>Finance</td>
-                                            <td>Jan 15, 2023</td>
-                                            <td><span class="status-badge badge-warning">Inactive</span></td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn" title="Reset Password">
-                                                        <span class="material-symbols-outlined">lock_reset</span>
-                                                    </button>
+                                            <td>Sales Manager</td>
+                                            <td>Sales</td>
+                                            <td>Aug 15, 2023</td>
+                                            <td><span class="status-badge badge-warning">On Leave</span></td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="user-info-cell">
+                                                <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Michael Wilson" class="user-avatar-small">
+                                                <div>
+                                                    <div>Michael Wilson</div>
+                                                    <div class="employee-email">michael.wilson@acmecorp.com</div>
                                                 </div>
+                                            </td>
+                                            <td>Finance Director</td>
+                                            <td>Finance</td>
+                                            <td>Aug 14, 2023</td>
+                                            <td><span class="status-badge badge-danger">Inactive</span></td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="table-actions">
-                                <button class="primary-btn">
-                                    <span class="material-symbols-outlined">add</span>
-                                    Add User
-                                </button>
+                                <button class="primary-btn"><span class="material-symbols-outlined">add</span> Add User</button>
                             </div>
                         </div>
-
+                        
                         <div class="settings-section">
                             <h3>Roles & Permissions</h3>
                             <div class="table-container">
@@ -495,100 +396,179 @@
                                     <thead>
                                         <tr>
                                             <th>Role Name</th>
-                                            <th>Description</th>
                                             <th>Users</th>
-                                            <th>Last Updated</th>
+                                            <th>Description</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>Administrator</td>
-                                            <td>Full system access with all permissions</td>
                                             <td>2</td>
-                                            <td>Dec 10, 2022</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn" title="View Permissions">
-                                                        <span class="material-symbols-outlined">visibility</span>
-                                                    </button>
-                                                </div>
+                                            <td>Full system access and control</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>HR Manager</td>
-                                            <td>Access to HR functions and limited admin features</td>
                                             <td>5</td>
-                                            <td>Dec 15, 2022</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn" title="View Permissions">
-                                                        <span class="material-symbols-outlined">visibility</span>
-                                                    </button>
-                                                </div>
+                                            <td>Manage employees, attendance, leave, and payroll</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Department Manager</td>
-                                            <td>Access to manage department employees</td>
                                             <td>12</td>
-                                            <td>Jan 5, 2023</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn" title="View Permissions">
-                                                        <span class="material-symbols-outlined">visibility</span>
-                                                    </button>
-                                                </div>
+                                            <td>Manage employees within their department</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Employee</td>
-                                            <td>Basic access to personal information and requests</td>
-                                            <td>229</td>
-                                            <td>Jan 5, 2023</td>
-                                            <td>
-                                                <div class="action-buttons">
-                                                    <button class="action-btn edit-btn" title="Edit">
-                                                        <span class="material-symbols-outlined">edit</span>
-                                                    </button>
-                                                    <button class="action-btn" title="View Permissions">
-                                                        <span class="material-symbols-outlined">visibility</span>
-                                                    </button>
-                                                </div>
+                                            <td>228</td>
+                                            <td>View own profile, request leave, view payslips</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contractor</td>
+                                            <td>15</td>
+                                            <td>Limited access to system features</td>
+                                            <td class="action-buttons">
+                                                <button class="action-btn edit-btn"><span class="material-symbols-outlined">edit</span></button>
+                                                <button class="action-btn delete-btn"><span class="material-symbols-outlined">delete</span></button>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="table-actions">
-                                <button class="primary-btn">
-                                    <span class="material-symbols-outlined">add</span>
-                                    Add Role
-                                </button>
+                                <button class="primary-btn"><span class="material-symbols-outlined">add</span> Add Role</button>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-section">
+                            <h3>Security</h3>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="password-policy">Password Policy</label>
+                                        <select id="password-policy">
+                                            <option value="standard">Standard (8+ characters, 1 uppercase, 1 number)</option>
+                                            <option value="strong">Strong (10+ characters, uppercase, lowercase, number, symbol)</option>
+                                            <option value="custom">Custom</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="password-expiry">Password Expiry</label>
+                                        <select id="password-expiry">
+                                            <option value="30">30 days</option>
+                                            <option value="60">60 days</option>
+                                            <option value="90">90 days</option>
+                                            <option value="never">Never</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="account-lockout">Account Lockout After Failed Attempts</label>
+                                        <select id="account-lockout">
+                                            <option value="3">3 attempts</option>
+                                            <option value="5">5 attempts</option>
+                                            <option value="10">10 attempts</option>
+                                            <option value="never">Never</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="two-factor-required">
+                                            <label for="two-factor-required">Require Two-Factor Authentication for all users</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="session-timeout">
+                                            <label for="session-timeout">Enable session timeout after inactivity</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="session-timeout-minutes">Session Timeout (minutes)</label>
+                                        <input type="number" id="session-timeout-minutes" value="30" min="5" max="120">
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="primary-btn">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="settings-section">
+                            <h3>Account Settings</h3>
+                            <form class="settings-form" id="change-password-form">
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="current-password">Current Password</label>
+                                        <input type="password" id="current-password">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="new-password">New Password</label>
+                                        <input type="password" id="new-password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                        <input type="password" id="confirm-password">
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="primary-btn">Change Password</button>
+                                </div>
+                            </form>
+                            
+                            <div style="margin-top: 20px;">
+                                <h4>Two-Factor Authentication</h4>
+                                <p style="margin-bottom: 10px;">Enhance your account security by enabling two-factor authentication.</p>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <div class="checkbox-group">
+                                            <label class="switch">
+                                                <input type="checkbox" id="two-factor-toggle">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <label for="two-factor-toggle" style="margin-left: 10px;">Enable Two-Factor Authentication</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Notifications Tab -->
-                    <div class="tab-content" id="notifications-tab">
+                    <div id="notifications-tab" class="tab-content">
                         <div class="settings-section">
-                            <h3>Email Notifications</h3>
+                            <h3>Notification Settings</h3>
                             <div class="notification-settings">
                                 <div class="notification-group">
-                                    <h4>Employee Management</h4>
+                                    <h4>Email Notifications</h4>
                                     <div class="notification-item">
                                         <div class="notification-info">
-                                            <h5>New Employee Added</h5>
-                                            <p>Send notification when a new employee is added to the system</p>
+                                            <h5>Employee Updates</h5>
+                                            <p>Receive notifications when employee information is updated</p>
                                         </div>
                                         <div class="notification-toggle">
                                             <label class="switch">
@@ -599,8 +579,8 @@
                                     </div>
                                     <div class="notification-item">
                                         <div class="notification-info">
-                                            <h5>Employee Information Updated</h5>
-                                            <p>Send notification when employee information is updated</p>
+                                            <h5>Leave Requests</h5>
+                                            <p>Receive notifications for new leave requests and approvals</p>
                                         </div>
                                         <div class="notification-toggle">
                                             <label class="switch">
@@ -611,8 +591,8 @@
                                     </div>
                                     <div class="notification-item">
                                         <div class="notification-info">
-                                            <h5>Employee Termination</h5>
-                                            <p>Send notification when an employee is terminated</p>
+                                            <h5>Attendance Alerts</h5>
+                                            <p>Receive notifications for attendance irregularities</p>
                                         </div>
                                         <div class="notification-toggle">
                                             <label class="switch">
@@ -621,54 +601,10 @@
                                             </label>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="notification-group">
-                                    <h4>Leave Management</h4>
-                                    <div class="notification-item">
-                                        <div class="notification-info">
-                                            <h5>Leave Request Submitted</h5>
-                                            <p>Send notification when a leave request is submitted</p>
-                                        </div>
-                                        <div class="notification-toggle">
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="notification-item">
-                                        <div class="notification-info">
-                                            <h5>Leave Request Approved/Rejected</h5>
-                                            <p>Send notification when a leave request is approved or rejected</p>
-                                        </div>
-                                        <div class="notification-toggle">
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="notification-item">
-                                        <div class="notification-info">
-                                            <h5>Leave Balance Update</h5>
-                                            <p>Send notification when leave balances are updated</p>
-                                        </div>
-                                        <div class="notification-toggle">
-                                            <label class="switch">
-                                                <input type="checkbox">
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="notification-group">
-                                    <h4>Payroll</h4>
                                     <div class="notification-item">
                                         <div class="notification-info">
                                             <h5>Payroll Processing</h5>
-                                            <p>Send notification when payroll is processed</p>
+                                            <p>Receive notifications when payroll is processed</p>
                                         </div>
                                         <div class="notification-toggle">
                                             <label class="switch">
@@ -677,42 +613,6 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="notification-item">
-                                        <div class="notification-info">
-                                            <h5>Payslip Generated</h5>
-                                            <p>Send notification when payslips are generated</p>
-                                        </div>
-                                        <div class="notification-toggle">
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="notification-item">
-                                        <div class="notification-info">
-                                            <h5>Salary Changes</h5>
-                                            <p>Send notification when salary changes are made</p>
-                                        </div>
-                                        <div class="notification-toggle">
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <button type="button" class="primary-btn">Save Changes</button>
-                            </div>
-                        </div>
-
-                        <div class="settings-section">
-                            <h3>System Notifications</h3>
-                            <div class="notification-settings">
-                                <div class="notification-group">
-                                    <h4>General</h4>
                                     <div class="notification-item">
                                         <div class="notification-info">
                                             <h5>System Updates</h5>
@@ -720,15 +620,19 @@
                                         </div>
                                         <div class="notification-toggle">
                                             <label class="switch">
-                                                <input type="checkbox" checked>
+                                                <input type="checkbox">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
                                     </div>
+                                </div>
+                                
+                                <div class="notification-group">
+                                    <h4>In-App Notifications</h4>
                                     <div class="notification-item">
                                         <div class="notification-info">
-                                            <h5>Security Alerts</h5>
-                                            <p>Receive notifications about security-related events</p>
+                                            <h5>Employee Updates</h5>
+                                            <p>Receive in-app notifications when employee information is updated</p>
                                         </div>
                                         <div class="notification-toggle">
                                             <label class="switch">
@@ -739,8 +643,73 @@
                                     </div>
                                     <div class="notification-item">
                                         <div class="notification-info">
-                                            <h5>Error Reports</h5>
-                                            <p>Receive notifications about system errors</p>
+                                            <h5>Leave Requests</h5>
+                                            <p>Receive in-app notifications for new leave requests and approvals</p>
+                                        </div>
+                                        <div class="notification-toggle">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h5>Attendance Alerts</h5>
+                                            <p>Receive in-app notifications for attendance irregularities</p>
+                                        </div>
+                                        <div class="notification-toggle">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h5>Payroll Processing</h5>
+                                            <p>Receive in-app notifications when payroll is processed</p>
+                                        </div>
+                                        <div class="notification-toggle">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h5>System Updates</h5>
+                                            <p>Receive in-app notifications about system updates and maintenance</p>
+                                        </div>
+                                        <div class="notification-toggle">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-group">
+                                    <h4>SMS Notifications</h4>
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h5>Emergency Alerts</h5>
+                                            <p>Receive SMS notifications for emergency situations</p>
+                                        </div>
+                                        <div class="notification-toggle">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h5>Critical System Issues</h5>
+                                            <p>Receive SMS notifications for critical system issues</p>
                                         </div>
                                         <div class="notification-toggle">
                                             <label class="switch">
@@ -756,19 +725,19 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Integrations Tab -->
-                    <div class="tab-content" id="integrations-tab">
+                    <div id="integrations-tab" class="tab-content">
                         <div class="settings-section">
-                            <h3>Connected Applications</h3>
+                            <h3>Integrations</h3>
                             <div class="integrations-list">
-                                <div class="integration-card connected">
+                                <div class="integration-card">
                                     <div class="integration-logo">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Notion_app_logo.png/800px-Notion_app_logo.png" alt="Notion">
+                                        <span class="material-symbols-outlined" style="font-size: 36px; color: var(--primary-color);">cloud</span>
                                     </div>
                                     <div class="integration-info">
-                                        <h4>Notion</h4>
-                                        <p>Connected on Jan 15, 2023</p>
+                                        <h4>Google Workspace</h4>
+                                        <p>Integrate with Google Calendar, Drive, and Gmail</p>
                                         <div class="integration-status">
                                             <span class="status-badge badge-success">Connected</span>
                                         </div>
@@ -778,14 +747,79 @@
                                         <button class="secondary-btn">Disconnect</button>
                                     </div>
                                 </div>
-
-                                <div class="integration-card connected">
+                                
+                                <div class="integration-card">
                                     <div class="integration-logo">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png" alt="Slack">
+                                        <span class="material-symbols-outlined" style="font-size: 36px; color: var(--primary-color);">payments</span>
+                                    </div>
+                                    <div class="integration-info">
+                                        <h4>QuickBooks</h4>
+                                        <p>Integrate with QuickBooks for payroll and accounting</p>
+                                        <div class="integration-status">
+                                            <span class="status-badge badge-success">Connected</span>
+                                        </div>
+                                    </div>
+                                    <div class="integration-actions">
+                                        <button class="secondary-btn">Configure</button>
+                                        <button class="secondary-btn">Disconnect</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="integration-card">
+                                    <div class="integration-logo">
+                                        <span class="material-symbols-outlined" style="font-size: 36px; color: var(--primary-color);">chat</span>
                                     </div>
                                     <div class="integration-info">
                                         <h4>Slack</h4>
-                                        <p>Connected on Dec 10, 2022</p>
+                                        <p>Integrate with Slack for notifications and updates</p>
+                                        <div class="integration-status">
+                                            <span class="status-badge badge-warning">Not Connected</span>
+                                        </div>
+                                    </div>
+                                    <div class="integration-actions">
+                                        <button class="primary-btn">Connect</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="integration-card">
+                                    <div class="integration-logo">
+                                        <span class="material-symbols-outlined" style="font-size: 36px; color: var(--primary-color);">calendar_month</span>
+                                    </div>
+                                    <div class="integration-info">
+                                        <h4>Microsoft 365</h4>
+                                        <p>Integrate with Outlook, OneDrive, and Teams</p>
+                                        <div class="integration-status">
+                                            <span class="status-badge badge-warning">Not Connected</span>
+                                        </div>
+                                    </div>
+                                    <div class="integration-actions">
+                                        <button class="primary-btn">Connect</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="integration-card">
+                                    <div class="integration-logo">
+                                        <span class="material-symbols-outlined" style="font-size: 36px; color: var(--primary-color);">description</span>
+                                    </div>
+                                    <div class="integration-info">
+                                        <h4>DocuSign</h4>
+                                        <p>Integrate with DocuSign for electronic signatures</p>
+                                        <div class="integration-status">
+                                            <span class="status-badge badge-warning">Not Connected</span>
+                                        </div>
+                                    </div>
+                                    <div class="integration-actions">
+                                        <button class="primary-btn">Connect</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="integration-card">
+                                    <div class="integration-logo">
+                                        <span class="material-symbols-outlined" style="font-size: 36px; color: var(--primary-color);">schedule</span>
+                                    </div>
+                                    <div class="integration-info">
+                                        <h4>Zoom</h4>
+                                        <p>Integrate with Zoom for video meetings</p>
                                         <div class="integration-status">
                                             <span class="status-badge badge-success">Connected</span>
                                         </div>
@@ -793,54 +827,30 @@
                                     <div class="integration-actions">
                                         <button class="secondary-btn">Configure</button>
                                         <button class="secondary-btn">Disconnect</button>
-                                    </div>
-                                </div>
-
-                                <div class="integration-card">
-                                    <div class="integration-logo">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/1200px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png" alt="Microsoft Teams">
-                                    </div>
-                                    <div class="integration-info">
-                                        <h4>Microsoft Teams</h4>
-                                        <p>Integrate with Microsoft Teams for notifications and collaboration</p>
-                                    </div>
-                                    <div class="integration-actions">
-                                        <button class="primary-btn">Connect</button>
-                                    </div>
-                                </div>
-
-                                <div class="integration-card">
-                                    <div class="integration-logo">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/512px-Google_Drive_icon_%282020%29.svg.png?20221103153031" alt="Google Drive">
-                                    </div>
-                                    <div class="integration-info">
-                                        <h4>Google Drive</h4>
-                                        <p>Integrate with Google Drive for document storage and sharing</p>
-                                    </div>
-                                    <div class="integration-actions">
-                                        <button class="primary-btn">Connect</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                    </div>
+                    
+                    <!-- API Tab -->
+                    <div id="api-tab" class="tab-content">
                         <div class="settings-section">
-                            <h3>API Access</h3>
+                            <h3>API Settings</h3>
                             <div class="api-settings">
-                                <div class="api-info">
-                                    <p>Use our API to integrate with other systems and applications. Generate an API key to get started.</p>
-                                </div>
+                                <p>Use our API to integrate the HR Management System with your other applications and services.</p>
+                                
                                 <div class="api-key-section">
                                     <h4>API Key</h4>
                                     <div class="api-key-display">
-                                        <input type="password" value="sk_live_51JKlTyGhTyUi8HtYuXnVBcLqY" readonly>
+                                        <input type="password" value="sk_live_51KjTyRGhTyRGhTyRGhTyRGhTyRGhTyRGhTyRGhTyR" readonly>
                                         <button class="secondary-btn">
                                             <span class="material-symbols-outlined">visibility</span>
-                                            Show
+                                            <span>Show</span>
                                         </button>
                                         <button class="secondary-btn">
                                             <span class="material-symbols-outlined">content_copy</span>
-                                            Copy
+                                            <span>Copy</span>
                                         </button>
                                     </div>
                                     <div class="api-key-actions">
@@ -848,78 +858,174 @@
                                         <button class="secondary-btn">Revoke Key</button>
                                     </div>
                                 </div>
+                                
                                 <div class="api-documentation">
-                                    <h4>Documentation</h4>
-                                    <p>View our API documentation to learn how to integrate with our system.</p>
-                                    <a href="#" class="primary-btn">View Documentation</a>
+                                    <h4>API Documentation</h4>
+                                    <p>Our comprehensive API documentation provides all the information you need to integrate with our system.</p>
+                                    <button class="secondary-btn">View Documentation</button>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <h4>API Rate Limits</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="rate-limit">Requests per minute</label>
+                                            <input type="number" id="rate-limit" value="60" min="10" max="1000">
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="button" class="primary-btn">Save Changes</button>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <h4>Webhook Settings</h4>
+                                    <div class="form-row">
+                                        <div class="form-group full-width">
+                                            <label for="webhook-url">Webhook URL</label>
+                                            <input type="url" id="webhook-url" placeholder="https://your-domain.com/webhook">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group full-width">
+                                            <label>Webhook Events</label>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="webhook-employee-created">
+                                                <label for="webhook-employee-created">Employee Created</label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="webhook-employee-updated">
+                                                <label for="webhook-employee-updated">Employee Updated</label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="webhook-leave-request">
+                                                <label for="webhook-leave-request">Leave Request</label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="webhook-payroll-processed">
+                                                <label for="webhook-payroll-processed">Payroll Processed</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="button" class="primary-btn">Save Changes</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- System Tab -->
-                    <div class="tab-content" id="system-tab">
+                    
+                    <!-- Data Management Tab -->
+                    <div id="data-tab" class="tab-content">
                         <div class="settings-section">
-                            <h3>General Settings</h3>
+                            <h3>Data Management</h3>
+                            <div class="data-management-options">
+                                <div class="data-option">
+                                    <h4>Backup & Restore</h4>
+                                    <p>Create backups of your HR data and restore from previous backups.</p>
+                                    <button class="primary-btn">Backup Now</button>
+                                    <button class="secondary-btn" style="margin-top: 10px;">Restore Backup</button>
+                                    
+                                    <div style="margin-top: 15px;">
+                                        <div class="checkbox-group">
+                                            <label class="switch">
+                                                <input type="checkbox" id="auto-backup-toggle" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <label for="auto-backup-toggle" style="margin-left: 10px;">Enable Automatic Backups</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px;">
+                                        <label for="backup-frequency">Backup Frequency</label>
+                                        <select id="backup-frequency" style="margin-top: 5px; width: 100%;">
+                                            <option value="daily">Daily</option>
+                                            <option value="weekly" selected>Weekly</option>
+                                            <option value="monthly">Monthly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="data-option">
+                                    <h4>Export Data</h4>
+                                    <p>Export your HR data in various formats for external use.</p>
+                                    <div class="export-options">
+                                        <button class="secondary-btn">CSV</button>
+                                        <button class="secondary-btn">Excel</button>
+                                        <button class="secondary-btn">PDF</button>
+                                        <button class="secondary-btn">JSON</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="data-option">
+                                    <h4>Data Purging</h4>
+                                    <p>Permanently delete old or unnecessary data from the system.</p>
+                                    <div style="margin-top: 10px;">
+                                        <label for="purge-data-type">Data Type</label>
+                                        <select id="purge-data-type" style="margin-top: 5px; width: 100%;">
+                                            <option value="attendance">Attendance Records</option>
+                                            <option value="leave">Leave Records</option>
+                                            <option value="payroll">Payroll Records</option>
+                                            <option value="activity">Activity Logs</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px;">
+                                        <label for="purge-older-than">Older Than</label>
+                                        <select id="purge-older-than" style="margin-top: 5px; width: 100%;">
+                                            <option value="6 months">6 months</option>
+                                            <option value="1 year">1 year</option>
+                                            <option value="2 years">2 years</option>
+                                            <option value="3 years">3 years</option>
+                                            <option value="5 years">5 years</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <button class="danger-btn" style="margin-top: 15px;">Purge Data</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Appearance Tab -->
+                    <div id="appearance-tab" class="tab-content">
+                        <div class="settings-section">
+                            <h3>Appearance Settings</h3>
                             <form class="settings-form">
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="date-format">Date Format</label>
-                                        <select id="date-format">
-                                            <option value="mm/dd/yyyy">MM/DD/YYYY</option>
-                                            <option value="dd/mm/yyyy">DD/MM/YYYY</option>
-                                            <option value="yyyy-mm-dd">YYYY-MM-DD</option>
+                                        <label for="theme-switcher">Theme</label>
+                                        <select id="theme-switcher">
+                                            <option value="teal" selected>Teal</option>
+                                            <option value="blue">Blue</option>
+                                            <option value="purple">Purple</option>
+                                            <option value="green">Green</option>
+                                            <option value="orange">Orange</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="time-format">Time Format</label>
-                                        <select id="time-format">
-                                            <option value="12">12 Hour (AM/PM)</option>
-                                            <option value="24">24 Hour</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="timezone">Timezone</label>
-                                        <select id="timezone">
-                                            <option value="utc">UTC</option>
-                                            <option value="est">Eastern Time (ET)</option>
-                                            <option value="cst">Central Time (CT)</option>
-                                            <option value="pst">Pacific Time (PT)</option>
-                                            <option value="gmt">Greenwich Mean Time (GMT)</option>
-                                            <option value="ist">India Standard Time (IST)</option>
-                                            <option value="jst">Japan Standard Time (JST)</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="currency">Currency</label>
-                                        <select id="currency">
-                                            <option value="usd">US Dollar ($)</option>
-                                            <option value="eur">Euro (€)</option>
-                                            <option value="gbp">British Pound (£)</option>
-                                            <option value="jpy">Japanese Yen (¥)</option>
-                                            <option value="cad">Canadian Dollar (C$)</option>
+                                        <label for="font-size">Font Size</label>
+                                        <select id="font-size">
+                                            <option value="small">Small</option>
+                                            <option value="medium" selected>Medium</option>
+                                            <option value="large">Large</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="language">Language</label>
-                                        <select id="language">
-                                            <option value="en">English</option>
-                                            <option value="es">Spanish</option>
-                                            <option value="fr">French</option>
-                                            <option value="de">German</option>
-                                            <option value="zh">Chinese</option>
-                                            <option value="ja">Japanese</option>
+                                        <label for="layout-density">Layout Density</label>
+                                        <select id="layout-density">
+                                            <option value="compact">Compact</option>
+                                            <option value="comfortable" selected>Comfortable</option>
+                                            <option value="spacious">Spacious</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="first-day">First Day of Week</label>
-                                        <select id="first-day">
-                                            <option value="sunday">Sunday</option>
-                                            <option value="monday">Monday</option>
+                                        <label for="sidebar-position">Sidebar Position</label>
+                                        <select id="sidebar-position">
+                                            <option value="left" selected>Left</option>
+                                            <option value="right">Right</option>
                                         </select>
                                     </div>
                                 </div>
@@ -928,108 +1034,127 @@
                                 </div>
                             </form>
                         </div>
-
-                        <div class="settings-section">
-                            <h3>Data Management</h3>
-                            <div class="data-management-options">
-                                <div class="data-option">
-                                    <h4>Data Backup</h4>
-                                    <p>Configure automatic backups of your HR data</p>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="backup-frequency">Backup Frequency</label>
-                                            <select id="backup-frequency">
-                                                <option value="daily">Daily</option>
-                                                <option value="weekly">Weekly</option>
-                                                <option value="monthly">Monthly</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="backup-retention">Retention Period</label>
-                                            <select id="backup-retention">
-                                                <option value="30">30 Days</option>
-                                                <option value="60">60 Days</option>
-                                                <option value="90">90 Days</option>
-                                                <option value="365">1 Year</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <button class="secondary-btn">Configure Storage</button>
-                                </div>
-
-                                <div class="data-option">
-                                    <h4>Data Export</h4>
-                                    <p>Export your HR data for backup or migration purposes</p>
-                                    <div class="export-options">
-                                        <button class="secondary-btn">Export All Data</button>
-                                        <button class="secondary-btn">Export Employee Data</button>
-                                        <button class="secondary-btn">Export Payroll Data</button>
-                                    </div>
-                                </div>
-
-                                <div class="data-option">
-                                    <h4>Data Purge</h4>
-                                    <p>Permanently delete old or unnecessary data</p>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="purge-data-type">Data Type</label>
-                                            <select id="purge-data-type">
-                                                <option value="logs">System Logs</option>
-                                                <option value="attendance">Attendance Records</option>
-                                                <option value="payroll">Payroll Records</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="purge-older-than">Older Than</label>
-                                            <select id="purge-older-than">
-                                                <option value="1">1 Year</option>
-                                                <option value="2">2 Years</option>
-                                                <option value="3">3 Years</option>
-                                                <option value="5">5 Years</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <button class="danger-btn">Purge Data</button>
-                                </div>
-                            </div>
-                        </div>
-
+                    </div>
+                    
+                    <!-- System Tab -->
+                    <div id="system-tab" class="tab-content">
                         <div class="settings-section">
                             <h3>System Information</h3>
                             <div class="system-info">
                                 <div class="info-item">
-                                    <span class="info-label">Version</span>
-                                    <span class="info-value">HR Management System v2.5.3</span>
+                                    <div class="info-label">System Version</div>
+                                    <div>2.5.3</div>
                                 </div>
                                 <div class="info-item">
-                                    <span class="info-label">Last Updated</span>
-                                    <span class="info-value">January 10, 2023</span>
+                                    <div class="info-label">Last Updated</div>
+                                    <div>August 15, 2023</div>
                                 </div>
                                 <div class="info-item">
-                                    <span class="info-label">Database Size</span>
-                                    <span class="info-value">1.2 GB</span>
+                                    <div class="info-label">Database Size</div>
+                                    <div>1.2 GB</div>
                                 </div>
                                 <div class="info-item">
-                                    <span class="info-label">Storage Used</span>
-                                    <span class="info-value">4.5 GB / 10 GB</span>
+                                    <div class="info-label">Storage Used</div>
+                                    <div>4.5 GB / 10 GB</div>
                                 </div>
                                 <div class="info-item">
-                                    <span class="info-label">License</span>
-                                    <span class="info-value">Enterprise (Expires: Dec 31, 2023)</span>
+                                    <div class="info-label">License</div>
+                                    <div>Enterprise (Expires: Dec 31, 2023)</div>
                                 </div>
                             </div>
                             <div class="system-actions">
                                 <button class="secondary-btn">Check for Updates</button>
-                                <button class="secondary-btn">System Diagnostics</button>
-                                <button class="secondary-btn">View Logs</button>
+                                <button class="secondary-btn">Clear Cache</button>
                             </div>
+                        </div>
+                        
+                        <div class="settings-section">
+                            <h3>System Logs</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="log-level">Log Level</label>
+                                    <select id="log-level">
+                                        <option value="error">Error</option>
+                                        <option value="warning">Warning</option>
+                                        <option value="info" selected>Info</option>
+                                        <option value="debug">Debug</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="log-retention">Log Retention</label>
+                                    <select id="log-retention">
+                                        <option value="7">7 days</option>
+                                        <option value="30" selected>30 days</option>
+                                        <option value="90">90 days</option>
+                                        <option value="365">1 year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="primary-btn">Save Changes</button>
+                                <button type="button" class="secondary-btn">View Logs</button>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-section">
+                            <h3>Email Configuration</h3>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="smtp-server">SMTP Server</label>
+                                        <input type="text" id="smtp-server" value="smtp.acmecorp.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="smtp-port">SMTP Port</label>
+                                        <input type="number" id="smtp-port" value="587">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="smtp-username">SMTP Username</label>
+                                        <input type="text" id="smtp-username" value="notifications@acmecorp.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="smtp-password">SMTP Password</label>
+                                        <input type="password" id="smtp-password" value="********">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="from-email">From Email</label>
+                                        <input type="email" id="from-email" value="hr-system@acmecorp.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="from-name">From Name</label>
+                                        <input type="text" id="from-name" value="Acme HR System">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="use-ssl" checked>
+                                            <label for="use-ssl">Use SSL/TLS</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="primary-btn">Save Changes</button>
+                                    <button type="button" class="secondary-btn">Test Connection</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 
+    <!-- Mobile Sidebar Toggle -->
+    <div class="sidebar-toggle">
+        <span class="material-symbols-outlined">menu</span>
+    </div>
+    
+    <script src="common.js"></script>
     <script src="settings.js"></script>
 </body>
 </html>
